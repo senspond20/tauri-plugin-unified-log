@@ -15,3 +15,5 @@ node_modules/
 
 dist-js
 dist
+./guest-js/dist
+./guest-js/node_modules

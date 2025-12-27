@@ -70,6 +70,3 @@ see **example/tauri-app**
 
 # Getting Started
 
-prepare to Deploy
-
-배포 준비중입니다.

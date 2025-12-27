@@ -18,7 +18,7 @@ Default permissions for the unified-log plugin
 <tr>
 <td>
 
-`unified-log:allow-log-terminal`
+`rgbitsoft-tauri-plugin-unified-log:allow-log-terminal`
 
 </td>
 <td>
@@ -31,7 +31,7 @@ Enables the log_terminal command without any pre-configured scope.
 <tr>
 <td>
 
-`unified-log:deny-log-terminal`
+`rgbitsoft-tauri-plugin-unified-log:deny-log-terminal`
 
 </td>
 <td>
@@ -44,7 +44,7 @@ Denies the log_terminal command without any pre-configured scope.
 <tr>
 <td>
 
-`unified-log:allow-log-terminal`
+`rgbitsoft-tauri-plugin-unified-log:allow-log-terminal`
 
 </td>
 <td>
@@ -57,7 +57,7 @@ Enables the log_terminal command for unified logging.
 <tr>
 <td>
 
-`unified-log:deny-log-terminal`
+`rgbitsoft-tauri-plugin-unified-log:deny-log-terminal`
 
 </td>
 <td>

@@ -1,0 +1,46 @@
+{
+  "name": "@rgbitsoft/tauri-plugin-unified-log",
+  "version": "1.0.0",
+  "description": "Unified logging bridge for Tauri. Consolidates Frontend (JS) and Backend (Rust) logs into a single terminal with a professional layout.",
+  "author": "senspond20 <senspond@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senspond20/tauri-plugin-unified-log.git"
+  },
+  "keywords": [
+    "tauri",
+    "plugin",
+    "logging",
+    "unified-log",
+    "rgbitsoft"
+  ],
+  "type": "module",
+  "main": "./dist-js/index.cjs",
+  "module": "./dist-js/index.js",
+  "types": "./dist-js/index.d.ts",
+  "exports": {
+    "types": "./dist-js/index.d.ts",
+    "import": "./dist-js/index.js",
+    "require": "./dist-js/index.cjs"
+  },
+  "files": [
+    "dist-js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.0.0",
+    "@types/node": "^22.0.0",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
