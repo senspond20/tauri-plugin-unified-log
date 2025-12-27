@@ -1,0 +1,21 @@
+[package]
+name = "tauri-plugin-unified-log"
+version = "0.1.0"
+authors = [ "senspond20 <senspond@gmail.com>" ]
+description = "Unified logging plugin for Tauri that seamlessly bridges Frontend (JS) and Backend (Rust) logs into a single terminal with a high-visibility layout."
+edition = "2021"
+rust-version = "1.77.2"
+exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+links = "tauri-plugin-unified-log"
+keywords = ["tauri", "plugin", "logging", "rust"]
+categories = ["development-tools", "utils"]
+
+[dependencies]
+tauri = { version = "2.0" }
+serde = "1.0"
+thiserror = "2"
+chrono = "0.4"
+colored = "2.0"
+
+[build-dependencies]
+tauri-plugin = { version = "2.5.2", features = ["build"] }

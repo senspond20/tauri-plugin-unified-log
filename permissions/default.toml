@@ -1,0 +1,14 @@
+[[permission]]
+identifier = "allow-log-terminal"
+description = "Enables the log_terminal command for unified logging."
+commands.allow = ["log_terminal"]
+
+[[permission]]
+identifier = "deny-log-terminal"
+description = "Denies the log_terminal command."
+commands.deny = ["log_terminal"]
+
+# 이 플러그인을 쓰는 사람이 기본적으로 가지게 될 권한 세트
+[default]
+description = "Default permissions for the unified-log plugin"
+permissions = ["allow-log-terminal"]

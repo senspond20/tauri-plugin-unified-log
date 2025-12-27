@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-log-terminal"
+description = "Enables the log_terminal command without any pre-configured scope."
+commands.allow = ["log_terminal"]
+
+[[permission]]
+identifier = "deny-log-terminal"
+description = "Denies the log_terminal command without any pre-configured scope."
+commands.deny = ["log_terminal"]
