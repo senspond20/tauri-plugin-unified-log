@@ -1,6 +1,6 @@
 {
   "name": "@rgbitsoft/tauri-plugin-unified-log",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unified logging bridge for Tauri. Consolidates Frontend (JS) and Backend (Rust) logs into a single terminal with a professional layout.",
   "author": "senspond20 <senspond@gmail.com>",
   "license": "MIT",
