@@ -1,7 +1,7 @@
 {
   "name": "tauri-plugin-unified-log-api",
   "version": "1.0.0",
-  "author": "You",
+  "author": "senspond20 <senspond@gmail.com>",
   "description": "",
   "type": "module",
   "types": "./dist-js/index.d.ts",
