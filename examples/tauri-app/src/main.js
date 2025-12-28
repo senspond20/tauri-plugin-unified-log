@@ -5,10 +5,10 @@ import { mount } from 'svelte';
 import { initUnifiedLog } from "@rgbitsoft/tauri-plugin-unified-log";
 // import { initUnifiedLog } from "../../../guest-js/index.js";
 
-// 🔥 입맛대로 설정하는 로그의 안식
+// Bridges all browser logs (console.log, warn, error, ..) to the Rust terminal
 initUnifiedLog({
-  printInBrowser: true,   
-  prettyJson: false       
+  printInBrowser: true,   // Keep logs visible in the browser console
+  prettyJson: false       // Set true to format JSON objects for better readability
 });
 
 const app = mount(App, {
