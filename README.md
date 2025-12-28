@@ -19,7 +19,7 @@ To solve this pain point, I benchmarked the Java Spring Boot logging style to un
 
 1. **Unified Logging**: Intercepts Frontend console.log and pipes it instantly to the Rust terminal.
 
-2. **Spring Boot Style Layout**: Sophisticated logging that includes Timestamps, Log Levels (INFO/WARN/ERROR), PID, Thread names/IDs, and Source tags (BACKEND/FRONTEND).
+2. **Spring Boot Style Layout**: Sophisticated logging that includes Timestamps, Log Levels (INFO/WARN/ERROR), PID, Thread names/IDs, and Source tags (RUST_CORE/WEB_VIEW).
 
 + Format: [Timestamp] [Level] [PID] [Thread] [Source] : Message
 + Race Condition Tracking: Easily identify which thread reached the log first by checking the precise thread ID/name.
@@ -142,7 +142,7 @@ initUnifiedLog({
 
 ### 3. Usage
 
-#### Frontend Logging
+#### Frontend(WebView) Logging
 
 > Use the standard Web API. Everything is automatically intercepted and sent to the terminal.
 
@@ -151,7 +151,7 @@ console.log("Hello from Frontend! 🚀");
 console.error("Something went wrong! 😱");
 ```
 
-#### Backend Logging
+#### Backend(RustCore) Logging
 
 > Use the powerful unified_log! macro to maintain the same professional layout on the Rust side.
 
@@ -174,3 +174,18 @@ fn trigger_server_log() {
 **High Visibility**: Distinctive color coding and layout for immediate recognition.
 
 **Tauri 2.0 Ready**: Built specifically for the latest Tauri ecosystem with full permission support.
+
+
+
+## Changelog
+
+### v1.0.0
+
+Initial Release
+
+### v1.0.1
+
+Renamed Logging Labels: Transitioned from generic labels to architecture-accurate identifiers.
++ BACKEND → RUST_CORE: Accurately reflects the native Rust main process.
++ FRONTEND → WEB_VIEW: Corrected to identify the UI layer's native rendering engine.
+
