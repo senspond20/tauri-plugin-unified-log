@@ -2,37 +2,20 @@ use chrono::Local;
 use colored::*;
 use std::process;
 use std::thread;
-use serde::Deserialize;
-use serde::Serialize;
+use crate::{LogLevel, LogSource};
 
-pub enum LogSource {
-    Frontend,
-    Backend,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone)]
-#[serde(rename_all = "lowercase")]
-pub enum LogLevel {
-    Info,
-    Warn,
-    Error,
-    Debug,
-    Trace,
-    Log,
-}
-
-// 매크로에서 편하게 쓰기 위해 문자열 변환 기능을 넣어줍니다.
-impl LogLevel {
-    pub fn to_label(&self) -> &'static str {
-        match self {
-            LogLevel::Info  => "INFO",
-            LogLevel::Warn  => "WARN",
-            LogLevel::Error => "ERROR",
-            LogLevel::Debug => "DEBUG",
-            LogLevel::Trace => "TRACE",
-            LogLevel::Log   => "LOG",
+#[macro_export]
+macro_rules! unified_log {
+    ($level:ident, $($arg:tt)*) => {
+        #[cfg(debug_assertions)]  // Only in debug mode
+        {
+                $crate::logger::write_unified_log(
+                  $crate::LogSource::RustCore,
+                  $crate::LogLevel::$level,
+                  &format!($($arg)*)
+            );
         }
-    }
+    };
 }
 
 pub fn write_unified_log(source: LogSource, level: LogLevel, message: &str) {
@@ -40,8 +23,8 @@ pub fn write_unified_log(source: LogSource, level: LogLevel, message: &str) {
     let pid = process::id();
     
     let source_str = match source {
-        LogSource::Frontend => "FRONTEND",
-        LogSource::Backend  => "BACKEND ",
+        LogSource::WebView => "WEB_VIEW",
+        LogSource::RustCore  => "RUST_CORE",
     };
     
     let level_str = level.to_label();
@@ -53,7 +36,7 @@ pub fn write_unified_log(source: LogSource, level: LogLevel, message: &str) {
         _       => level_str.green().bold(),
     };
     
-    let colored_source = if let LogSource::Frontend = source {
+    let colored_source = if let LogSource::WebView = source {
         source_str.magenta().bold()
     } else {
         source_str.blue().bold()

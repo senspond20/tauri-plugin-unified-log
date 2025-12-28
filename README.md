@@ -15,7 +15,7 @@ Since these two worlds are isolated, tracing data as it moves from the UI to the
 ## 🛠 Solution
 To solve this pain point, I benchmarked the Java Spring Boot logging style to unify and manage everything within a single terminal.
 
-<img src="./sceen-shot/2.png" width="100%">
+<img src="sceen-shot/ver1.0.1.png" width="100%">
 
 1. **Unified Logging**: Intercepts Frontend console.log and pipes it instantly to the Rust terminal.
 

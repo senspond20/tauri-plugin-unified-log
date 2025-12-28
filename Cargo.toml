@@ -1,6 +1,6 @@
 [package]
 name = "rgbitsoft-tauri-plugin-unified-log"
-version = "1.0.0"
+version = "1.0.1"
 authors = [ "senspond20 <senspond@gmail.com>" ]
 description = "Unified logging plugin for Tauri that seamlessly bridges Frontend (JS) and Backend (Rust) logs into a single terminal with a high-visibility layout."
 edition = "2021"

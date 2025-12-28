@@ -3,9 +3,9 @@ use rgbitsoft_tauri_plugin_unified_log::unified_log;
 
 #[tauri::command]
 fn trigger_server_log() {
-    unified_log!(Info, "Invoking Rust Backend...!");
-    unified_log!(Warn, "Invoking Rust Backend...! {}", "Warning Message");
-    unified_log!(Error, "Invoking Rust Backend...! {}", "Error Message");
+    unified_log!(Info, "Invoking Rust ...!");
+    unified_log!(Warn, "Invoking Rust ...! {}", "Warning Message");
+    unified_log!(Error, "Invoking Rust ...! {}", "Error Message");
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

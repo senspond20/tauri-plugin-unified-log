@@ -1,23 +1,13 @@
 use tauri::{
   plugin::{Builder, TauriPlugin}, Runtime,
 };
-
+pub mod types;  
+pub mod logger;
 pub mod commands;
-pub mod utils;
 
-#[macro_export]
-macro_rules! unified_log {
-    ($level:ident, $($arg:tt)*) => { 
-        #[cfg(debug_assertions)]  // Only in debug mode
-        {
-                $crate::utils::write_unified_log(
-                  $crate::utils::LogSource::Backend,
-                  $crate::utils::LogLevel::$level, 
-                  &format!($($arg)*)
-            );
-        }
-    };
-}
+// 매크로가 내부 타입을 참조하기 쉽게 재배치
+pub use types::{LogLevel, LogSource};
+
 // .
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {

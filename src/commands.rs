@@ -1,5 +1,6 @@
 use tauri::{command, AppHandle, Runtime};
-use crate::utils::{write_unified_log, LogLevel, LogSource};
+use crate::logger::{write_unified_log};
+use crate::types::{LogLevel, LogSource};
 
 #[command]
 pub(crate) fn log_terminal<R: Runtime>(
@@ -11,6 +12,6 @@ pub(crate) fn log_terminal<R: Runtime>(
     // Only in debug mode
     #[cfg(debug_assertions)]
     {
-        write_unified_log(LogSource::Frontend, level, &message);
+        write_unified_log(LogSource::WebView, level, &message);
     }
 }
