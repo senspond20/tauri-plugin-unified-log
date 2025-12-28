@@ -63,11 +63,19 @@ Tauri로 앱을 개발하다 보면 진짜 확인하기 거지같고 혈압 오�
 
 ## Example
 
+### Tauri-Svelte
 
 <img src="./sceen-shot/1.png" width="60%">
 
-see **example/tauri-app**
+see **example/tauri-svelte**
 
+### Tauri-React
+
+<img src="./sceen-shot/react.png" width="60%">
+
+see **example/tauri-react**
+
+### Tauri-Vue
 
 
 ## Getting Started
@@ -87,8 +95,6 @@ pnpm add @rgbitsoft/tauri-plugin-unified-log
 # or
 npm install @rgbitsoft/tauri-plugin-unified-log
 ```
-
-
 
 ### 2. Setup
 
