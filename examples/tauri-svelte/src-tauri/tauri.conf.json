@@ -1,5 +1,5 @@
 {
-  "productName": "tauri-app",
+  "productName": "tauri-svelte",
   "version": "0.1.0",
   "identifier": "com.tauri.dev",
   "build": {
